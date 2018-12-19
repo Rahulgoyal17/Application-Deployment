@@ -7,6 +7,14 @@
   - name: Install Nginx Package
     shell: amazon-linux-extras install nginx1.12 -y
     
+  - Name: 
+    file:
+      path: /usr/share/nginx/html/
+      state: directory
+      mode: 0777
+      owner: nginx
+      group: nginx
+    
   - name: Download latest Application code from S3
     get_url:
       url: https://s3.amazonaws.com/hello-world-application-code/index.html
