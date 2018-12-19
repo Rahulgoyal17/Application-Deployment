@@ -6,13 +6,21 @@
   tasks:
   - name: Install Nginx Package
     shell: amazon-linux-extras install nginx1.12 -y
+    
+    
+  - name: Download latest Application code from S3
+  s3:
+    bucket: hello-world-application-code
+    object: index.html
+    dest: /usr/share/nginx/html/index.html
+    mode: get  
 
-  - name: Insert Webpage Page
-    template:
-      src: index.html
-      dest: /usr/share/nginx/html/index.html
+  #- name: Copy Application Code
+    #template:
+      #src: index.html
+      #dest: /usr/share/nginx/html/index.html
 
-  - name: Start Service NGiNX
+  - name: Start Hello World Application
     service:
       name: nginx
       state: started
