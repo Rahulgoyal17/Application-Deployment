@@ -9,11 +9,11 @@
     
     
   - name: Download latest Application code from S3
-  s3:
-    bucket: hello-world-application-code
-    object: index.html
-    dest: /usr/share/nginx/html/index.html
-    mode: get  
+    s3:
+      bucket: hello-world-application-code
+      object: index.html
+      dest: /usr/share/nginx/html/index.html
+      mode: get  
 
   #- name: Copy Application Code
     #template:
