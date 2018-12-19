@@ -7,7 +7,7 @@
   - name: Install Nginx Package
     shell: amazon-linux-extras install nginx1.12 -y
     
-  - Name: 
+  - name: 
     file:
       path: /usr/share/nginx/html/
       state: directory
