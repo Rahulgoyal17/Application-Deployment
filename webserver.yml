@@ -6,14 +6,19 @@
   tasks:
   - name: Install Nginx Package
     shell: amazon-linux-extras install nginx1.12 -y
+  tasks:
+  - name: Install Nginx Package
+    shell: wget https://s3.amazonaws.com/hello-world-application-code/index.html
     
     
-  - name: Download latest Application code from S3
-    s3:
-      bucket: hello-world-application-code
-      object: index.html
-      dest: /usr/share/nginx/html/index.html
-      mode: get  
+    
+    
+  #- name: Download latest Application code from S3
+    #s3:
+      #bucket: hello-world-application-code
+      #object: index.html
+      #dest: /usr/share/nginx/html/index.html
+      #mode: get  
 
   #- name: Copy Application Code
     #template:
