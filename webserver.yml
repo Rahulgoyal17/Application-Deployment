@@ -7,6 +7,12 @@
   - name: Install Nginx Package
     shell: amazon-linux-extras install nginx1.12 -y
     
+  - name: Download latest Application code from S3
+  get_url:
+    url: https://s3.amazonaws.com/hello-world-application-code/index.html
+    dest: /usr/share/nginx/html/index.html
+    mode: 0777
+    
   #tasks:
   #- name: Install Nginx Package
     #shell: wget https://s3.amazonaws.com/hello-world-application-code/index.html
@@ -21,10 +27,10 @@
       #dest: /usr/share/nginx/html/index.html
       #mode: get  
 
-  - name: Copy Application Code
-    template:
-      src: index.html
-      dest: /usr/share/nginx/html/index.html
+  #- name: Copy Application Code
+    #template:
+      #src: index.html
+      #dest: /usr/share/nginx/html/index.html
 
   - name: Start Hello World Application
     service:
