@@ -10,7 +10,7 @@
   - name: Download latest Application code from S3
     get_url:
       url: https://s3.amazonaws.com/hello-world-application-code/index.html
-      dest: /usr/share/nginx/html/index.html
+      dest: /usr/share/nginx/html/
       mode: 0777
     
   #tasks:
