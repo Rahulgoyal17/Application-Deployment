@@ -11,6 +11,8 @@
     get_url:
       url: https://s3.amazonaws.com/hello-world-application-code/index.html
       dest: /usr/share/nginx/html/
+      owner: nginx
+      group: nginx
       mode: 0777
     
   #tasks:
