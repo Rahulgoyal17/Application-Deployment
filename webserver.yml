@@ -12,15 +12,13 @@
       path: /usr/share/nginx/html/
       state: directory
       mode: 0777
-      owner: nginx
-      group: nginx
+      owner: root
+      group: root
     
   - name: Download latest Application code from S3
     get_url:
       url: https://s3.amazonaws.com/hello-world-application-code/index.html
       dest: /usr/share/nginx/html/
-      owner: nginx
-      group: nginx
       mode: 0777
     
   #tasks:
